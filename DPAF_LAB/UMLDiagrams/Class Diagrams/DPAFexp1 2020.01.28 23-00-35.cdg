@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="DPAFexp1">
+  <ClassDiagramComponents>
+    <Class name="Circle" package="dpafexp1" visibility="public" xPosition="434.0" yPosition="301.0">
+      <Fields>
+        <Field name="center" type="Point" visibility="private"/>
+        <Field name="radius" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="x"/>
+          <Argument type="int" name="y"/>
+          <Argument type="int" name="r"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="area" returnType="double" visibility="public"/>
+        <Method name="roll" returnType="void" visibility="public">
+          <Argument type="float" name="degree"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="s"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Main" package="dpafexp1" visibility="public" xPosition="119.0" yPosition="111.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Point" package="dpafexp1" visibility="public" xPosition="171.0" yPosition="330.0">
+      <Fields>
+        <Field name="xPos" type="int" visibility="private"/>
+        <Field name="yPos" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="x"/>
+          <Argument type="int" name="y"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Rectangle" package="dpafexp1" visibility="public" xPosition="781.0" yPosition="40.0">
+      <Fields>
+        <Field name="length" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="l"/>
+          <Argument type="int" name="h"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="area" returnType="double" visibility="public"/>
+        <Method name="rotate" returnType="void" visibility="public">
+          <Argument type="float" name="degree"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Shape" package="dpafexp1" visibility="public" isAbstract="true" xPosition="406.0" yPosition="60.0">
+      <Fields>
+        <Field name="parentShape" type="Shape" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="area" returnType="double" visibility="package" isAbstract="true"/>
+        <Method name="setParentShape" returnType="void" visibility="public">
+          <Argument type="Shape" name="shape"/>
+        </Method>
+        <Method name="getParentShape" returnType="Shape" visibility="public"/>
+      </Methods>
+    </Class>
+    <Interface name="Rollable" package="dpafexp1" visibility="public" xPosition="889.0" yPosition="364.0">
+      <Methods>
+        <Method name="roll" returnType="void" visibility="package">
+          <Argument type="float" name="degree"/>
+        </Method>
+      </Methods>
+    </Interface>
+    <Interface name="Rotatable" package="dpafexp1" visibility="public" xPosition="1047.0" yPosition="74.0">
+      <Methods>
+        <Method name="rotate" returnType="void" visibility="package">
+          <Argument type="float" name="degree"/>
+        </Method>
+      </Methods>
+    </Interface>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="dpafexp1.Rectangle" target="dpafexp1.Rotatable"/>
+    <IsRelation name="is" source="dpafexp1.Rectangle" target="dpafexp1.Shape"/>
+    <HasRelation name="parentShape" source="dpafexp1.Shape" target="dpafexp1.Shape" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="center" source="dpafexp1.Circle" target="dpafexp1.Point" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="dpafexp1.Shape" target="dpafexp1.Shape" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="dpafexp1.Circle" target="dpafexp1.Shape"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="dpafexp1.Circle" target="dpafexp1.Rollable"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

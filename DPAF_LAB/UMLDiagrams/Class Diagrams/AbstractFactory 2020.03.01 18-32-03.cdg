@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="AbstractFactory">
+  <ClassDiagramComponents>
+    <Class name="AbstractFactory" package="abstractfactory" visibility="public" isAbstract="true" xPosition="20.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="getShape" returnType="Shape" visibility="package" isAbstract="true">
+          <Argument type="String" name="shapeType"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="FactoryProducer" package="abstractfactory" visibility="public" xPosition="320.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="getFactory" returnType="AbstractFactory" visibility="public" isStatic="true">
+          <Argument type="boolean" name="rounded"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Main" package="abstractfactory" visibility="public" xPosition="676.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Rectangle" package="abstractfactory" visibility="public" xPosition="362.0" yPosition="524.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="draw" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="RoundedRectangle" package="abstractfactory" visibility="public" xPosition="554.0" yPosition="524.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="draw" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="RoundedShapeFactory" package="abstractfactory" visibility="public" xPosition="465.0" yPosition="238.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="getShape" returnType="Shape" visibility="public">
+          <Argument type="String" name="shapeType"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="RoundedSquare" package="abstractfactory" visibility="public" xPosition="736.0" yPosition="477.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="draw" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="ShapeFactory" package="abstractfactory" visibility="public" xPosition="90.0" yPosition="238.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="getShape" returnType="Shape" visibility="public">
+          <Argument type="String" name="shapeType"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Square" package="abstractfactory" visibility="public" xPosition="144.0" yPosition="477.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="draw" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Interface name="Shape" package="abstractfactory" visibility="public" xPosition="362.0" yPosition="367.0">
+      <Methods>
+        <Method name="draw" returnType="void" visibility="package"/>
+      </Methods>
+    </Interface>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="abstractfactory.ShapeFactory" target="abstractfactory.AbstractFactory"/>
+    <UseRelation source="abstractfactory.AbstractFactory" target="abstractfactory.Shape" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="abstractfactory.Rectangle" target="abstractfactory.Shape"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="abstractfactory.RoundedRectangle" target="abstractfactory.Shape"/>
+    <UseRelation source="abstractfactory.ShapeFactory" target="abstractfactory.Shape" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="abstractfactory.FactoryProducer" target="abstractfactory.AbstractFactory" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="abstractfactory.Square" target="abstractfactory.Shape"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="abstractfactory.RoundedSquare" target="abstractfactory.Shape"/>
+    <IsRelation name="is" source="abstractfactory.RoundedShapeFactory" target="abstractfactory.AbstractFactory"/>
+    <UseRelation source="abstractfactory.RoundedShapeFactory" target="abstractfactory.Shape" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

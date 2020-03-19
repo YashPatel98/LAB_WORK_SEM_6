@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Container">
+  <ClassDiagramComponents>
+    <Class name="Exam" package="" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="examCode" type="int" visibility="private"/>
+        <Field name="subjectName" type="String" visibility="private"/>
+        <Field name="studentList" type="List&lt;Student&gt;" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="int" name="examCode"/>
+          <Argument type="String" name="subjectName"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getExamCode" returnType="int" visibility="public"/>
+        <Method name="setExamCode" returnType="void" visibility="public">
+          <Argument type="int" name="examCode"/>
+        </Method>
+        <Method name="getSubjectName" returnType="String" visibility="public"/>
+        <Method name="setSubjectName" returnType="void" visibility="public">
+          <Argument type="String" name="subjectName"/>
+        </Method>
+        <Method name="addStudent" returnType="void" visibility="public">
+          <Argument type="Student" name="s"/>
+        </Method>
+        <Method name="showStudent" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Main" package="" visibility="public" xPosition="369.0" yPosition="312.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Student" package="" visibility="public" xPosition="620.0" yPosition="20.0">
+      <Fields>
+        <Field name="studentId" type="int" visibility="private"/>
+        <Field name="studentName" type="String" visibility="private"/>
+        <Field name="examList" type="List&lt;Exam&gt;" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="int" name="studentId"/>
+          <Argument type="String" name="studentName"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getStudentId" returnType="int" visibility="public"/>
+        <Method name="setStudentId" returnType="void" visibility="public">
+          <Argument type="int" name="studentId"/>
+        </Method>
+        <Method name="getStudentName" returnType="String" visibility="public"/>
+        <Method name="setStudentName" returnType="void" visibility="public">
+          <Argument type="String" name="studentName"/>
+        </Method>
+        <Method name="addExam" returnType="void" visibility="public">
+          <Argument type="Exam" name="e"/>
+        </Method>
+        <Method name="showExam" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="studentList" source="Exam" target="Student" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Student&gt;"/>
+    <UseRelation source="Student" target="Exam" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="examList" source="Student" target="Exam" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Exam&gt;"/>
+    <UseRelation source="Exam" target="Student" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

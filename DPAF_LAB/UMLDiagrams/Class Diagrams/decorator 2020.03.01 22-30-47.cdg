@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="decorator">
+  <ClassDiagramComponents>
+    <Class name="FarmHouse" package="decorator" visibility="public" xPosition="159.0" yPosition="78.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getCost" returnType="int" visibility="public"/>
+        <Method name="getDescription" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Jalapeno" package="decorator" visibility="public" xPosition="714.0" yPosition="506.0">
+      <Fields>
+        <Field name="pizza" type="Pizza" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Pizza" name="pizza"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getDescription" returnType="String" visibility="public"/>
+        <Method name="getCost" returnType="int" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Main" package="decorator" visibility="public" xPosition="620.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Margherita" package="decorator" visibility="public" xPosition="159.0" yPosition="235.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getCost" returnType="int" visibility="public"/>
+        <Method name="getDescription" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Paneer" package="decorator" visibility="public" xPosition="317.0" yPosition="506.0">
+      <Fields>
+        <Field name="pizza" type="Pizza" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Pizza" name="pizza"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getDescription" returnType="String" visibility="public"/>
+        <Method name="getCost" returnType="int" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Pizza" package="decorator" visibility="public" isAbstract="true" xPosition="521.0" yPosition="160.0">
+      <Fields>
+        <Field name="description" type="String" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getDescription" returnType="String" visibility="public"/>
+        <Method name="getCost" returnType="int" visibility="public" isAbstract="true"/>
+      </Methods>
+    </Class>
+    <Class name="Tomato" package="decorator" visibility="public" xPosition="504.0" yPosition="565.0">
+      <Fields>
+        <Field name="pizza" type="Pizza" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Pizza" name="pizza"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getDescription" returnType="String" visibility="public"/>
+        <Method name="getCost" returnType="int" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="ToppingDecorator" package="decorator" visibility="public" isAbstract="true" xPosition="521.0" yPosition="356.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="getDescription" returnType="String" visibility="public" isAbstract="true"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="decorator.Margherita" target="decorator.Pizza"/>
+    <IsRelation name="is" source="decorator.FarmHouse" target="decorator.Pizza"/>
+    <IsRelation name="is" source="decorator.Jalapeno" target="decorator.ToppingDecorator"/>
+    <IsRelation name="is" source="decorator.Paneer" target="decorator.ToppingDecorator"/>
+    <IsRelation name="is" source="decorator.ToppingDecorator" target="decorator.Pizza"/>
+    <IsRelation name="is" source="decorator.Tomato" target="decorator.ToppingDecorator"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

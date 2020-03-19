@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="AbstractFactory">
+  <ClassDiagramComponents>
+    <Class name="AbstractFactory" package="abstractfactory" visibility="public" isAbstract="true" xPosition="327.0" yPosition="95.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="getColour" returnType="Colour" visibility="package" isAbstract="true">
+          <Argument type="String" name="colour"/>
+        </Method>
+        <Method name="getShape" returnType="Shape" visibility="package" isAbstract="true">
+          <Argument type="String" name="shape"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Circle" package="abstractfactory" visibility="public" xPosition="1283.0" yPosition="502.0">
+      <Fields>
+        <Field name="rad" type="int" visibility="private"/>
+        <Field name="area" type="double" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="rad"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="area" returnType="void" visibility="public"/>
+        <Method name="perimeter" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="ColourFactory" package="abstractfactory" visibility="public" xPosition="684.0" yPosition="558.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="getColour" returnType="Colour" visibility="package">
+          <Argument type="String" name="colour"/>
+        </Method>
+        <Method name="getShape" returnType="Shape" visibility="package">
+          <Argument type="String" name="shape"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="FactoryProducer" package="abstractfactory" visibility="public" xPosition="-55.0" yPosition="113.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="getFactory" returnType="AbstractFactory" visibility="public" isStatic="true">
+          <Argument type="String" name="choice"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Green" package="abstractfactory" visibility="public" xPosition="281.0" yPosition="633.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="fill" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Main" package="abstractfactory" visibility="public" xPosition="1820.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Rectangle" package="abstractfactory" visibility="public" xPosition="1400.0" yPosition="179.0">
+      <Fields>
+        <Field name="l" type="int" visibility="private"/>
+        <Field name="area" type="double" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="l"/>
+          <Argument type="int" name="w"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="area" returnType="void" visibility="public"/>
+        <Method name="perimeter" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Red" package="abstractfactory" visibility="public" xPosition="45.0" yPosition="502.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="fill" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="ShapeFactory" package="abstractfactory" visibility="public" xPosition="684.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="getColour" returnType="Colour" visibility="package">
+          <Argument type="String" name="colour"/>
+        </Method>
+        <Method name="getShape" returnType="Shape" visibility="package">
+          <Argument type="String" name="shape"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Interface name="Colour" package="abstractfactory" visibility="public" xPosition="350.0" yPosition="367.0">
+      <Methods>
+        <Method name="fill" returnType="void" visibility="public"/>
+      </Methods>
+    </Interface>
+    <Interface name="Shape" package="abstractfactory" visibility="public" xPosition="943.0" yPosition="247.0">
+      <Methods>
+        <Method name="area" returnType="void" visibility="public"/>
+        <Method name="perimeter" returnType="void" visibility="public"/>
+      </Methods>
+    </Interface>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation source="abstractfactory.FactoryProducer" target="abstractfactory.AbstractFactory" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="abstractfactory.AbstractFactory" target="abstractfactory.Colour" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="abstractfactory.Rectangle" target="abstractfactory.Shape"/>
+    <IsRelation name="is" source="abstractfactory.ColourFactory" target="abstractfactory.AbstractFactory"/>
+    <IsRelation name="is" source="abstractfactory.ShapeFactory" target="abstractfactory.AbstractFactory"/>
+    <UseRelation source="abstractfactory.ShapeFactory" target="abstractfactory.Shape" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="abstractfactory.ShapeFactory" target="abstractfactory.Colour" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="abstractfactory.ColourFactory" target="abstractfactory.Shape" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="abstractfactory.AbstractFactory" target="abstractfactory.Shape" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="abstractfactory.Circle" target="abstractfactory.Shape"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="abstractfactory.Red" target="abstractfactory.Colour"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="abstractfactory.Green" target="abstractfactory.Colour"/>
+    <UseRelation source="abstractfactory.ColourFactory" target="abstractfactory.Colour" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

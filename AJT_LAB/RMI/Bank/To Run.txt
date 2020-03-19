@@ -1,0 +1,7 @@
+javac BankI.java
+javac BankServer.java
+rmic BankServer
+start rmiregistry
+java -classpath .;derbyclient.jar BankServer
+javac BankClient.java
+java -Djava.security.policy=client.policy BankClient

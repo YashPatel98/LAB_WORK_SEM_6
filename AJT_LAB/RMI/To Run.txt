@@ -1,0 +1,7 @@
+javac TestI.java
+javac TestServer.java
+rmic TestServer
+start rmiregistry
+java TestServer
+javac TestClient.java
+java -Djava.security.policy=client.policy TestClient

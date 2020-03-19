@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Prototype">
+  <ClassDiagramComponents>
+    <Class name="Circle" package="prototype" visibility="public" xPosition="129.0" yPosition="382.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="draw" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Main" package="prototype" visibility="public" xPosition="532.0" yPosition="450.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Rectangle" package="prototype" visibility="public" xPosition="129.0" yPosition="30.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="draw" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Shape" package="prototype" visibility="public" isAbstract="true" xPosition="511.0" yPosition="97.0">
+      <Fields>
+        <Field name="shapeID" type="String" visibility="private"/>
+        <Field name="type" type="String" visibility="protected"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="draw" returnType="void" visibility="package" isAbstract="true"/>
+        <Method name="getShapeID" returnType="String" visibility="public"/>
+        <Method name="getType" returnType="String" visibility="public"/>
+        <Method name="setShapeID" returnType="void" visibility="public">
+          <Argument type="String" name="shapeID"/>
+        </Method>
+        <Method name="clone" returnType="Object" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="ShapeCache" package="prototype" visibility="public" xPosition="859.0" yPosition="143.0">
+      <Fields>
+        <Field name="shapeMap" type="Hashtable&lt;String, Shape&gt;" visibility="private" isStatic="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getShape" returnType="Shape" visibility="public" isStatic="true">
+          <Argument type="String" name="shapeId"/>
+        </Method>
+        <Method name="loadCache" returnType="void" visibility="public" isStatic="true"/>
+      </Methods>
+    </Class>
+    <Class name="Square" package="prototype" visibility="public" xPosition="129.0" yPosition="195.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="draw" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation source="prototype.ShapeCache" target="prototype.Shape" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="prototype.Square" target="prototype.Shape"/>
+    <HasRelation name="shapeMap" source="prototype.ShapeCache" target="prototype.Shape" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="prototype.Circle" target="prototype.Shape"/>
+    <IsRelation name="is" source="prototype.Rectangle" target="prototype.Shape"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

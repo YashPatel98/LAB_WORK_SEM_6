@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Composite">
+  <ClassDiagramComponents>
+    <Class name="Employee" package="composite" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="name" type="String" visibility="package"/>
+        <Field name="department" type="String" visibility="package"/>
+        <Field name="subordinates" type="List&lt;Employee&gt;" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="name"/>
+          <Argument type="String" name="department"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="add" returnType="void" visibility="public">
+          <Argument type="Employee" name="e"/>
+        </Method>
+        <Method name="remnove" returnType="void" visibility="public">
+          <Argument type="Employee" name="e"/>
+        </Method>
+        <Method name="getSubordinates" returnType="List&lt;Employee&gt;" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Main" package="composite" visibility="public" xPosition="320.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="subordinates" source="composite.Employee" target="composite.Employee" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Employee&gt;"/>
+    <UseRelation source="composite.Employee" target="composite.Employee" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
