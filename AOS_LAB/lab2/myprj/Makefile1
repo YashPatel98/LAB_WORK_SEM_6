@@ -1,0 +1,12 @@
+#.DEFAULT_GOAL := create 
+#all : greet create clean
+greet :
+	@echo "Good Morning!"
+	
+create :
+	@echo "Creating files..."
+	@touch "file1.txt"
+	
+clean :
+	@echo "Removing created files..."
+	@rm file1.txt  

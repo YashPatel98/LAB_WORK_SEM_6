@@ -1,0 +1,2 @@
+Hello!
+Copy this data to file2.txt

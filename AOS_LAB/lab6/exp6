@@ -1,0 +1,17 @@
+NAME
+       pipe - create pipe
+
+SYNOPSIS
+       #include <unistd.h>
+
+       int pipe(int filedes[2]);
+
+DESCRIPTION
+       pipe()  creates  a  pair of file descriptors, pointing to a pipe inode,
+       and places them in the array pointed to by filedes.  filedes[0] is  for
+       reading, filedes[1] is for writing.
+
+RETURN VALUE
+       On  success,  zero is returned.  On error, -1 is returned, and errno is
+       set appropriately.
+   

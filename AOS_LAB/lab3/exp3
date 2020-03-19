@@ -1,0 +1,130 @@
+fork - create a child process
+
+SYNOPSIS
+       #include <sys/types.h>
+       #include <unistd.h>
+
+       pid_t fork(void);
+
+DESCRIPTION
+       fork()  creates  a  child  process that differs from the parent process
+       only in its PID and PPID, and in the fact  that  resource  utilizations
+       are set to 0.  File locks and pending signals are not inherited.
+
+       Under  Linux,  fork()  is implemented using copy-on-write pages, so the
+       only penalty that it incurs is the time and memory required  to  dupli-
+       cate  the  parent’s  page tables, and to create a unique task structure
+       for the child.
+RETURN VALUE
+       On success, the PID of the child process is returned  in  the  parent’s
+       thread  of execution, and a 0 is returned in the child’s thread of exe-
+       cution.  On failure, a -1 will be returned in the parent’s context,  no
+       child process will be created, and errno will be set appropriately.
+       
+/------------------------------------------------------------------------------------/
+ exec [-cl] [-a name] [command [arguments]]
+              If  command is specified, it replaces the shell.  No new process
+              is created.  The arguments become the arguments to command.   If
+              the -l option is supplied, the shell places a dash at the begin-
+              ning of the zeroth arg passed to command.  This is what login(1)
+              does.  The -c option causes command to be executed with an empty
+              environment.  If -a is supplied, the shell passes  name  as  the
+              zeroth  argument  to the executed command.  If command cannot be
+              executed for some reason, a non-interactive shell exits,  unless
+              the  shell  option execfail is enabled, in which case it returns
+              failure.  An interactive shell returns failure if the file  can-
+              not  be executed.  If command is not specified, any redirections
+              take effect in the current shell, and the return  status  is  0.
+              If there is a redirection error, the return status is 1.
+/-------------------------------------------------------------------------------------/
+ exec [-cl] [-a name] [command [arguments]]
+              If  command is specified, it replaces the shell.  No new process
+              is created.  The arguments become the arguments to command.   If
+              the -l option is supplied, the shell places a dash at the begin-
+              ning of the zeroth arg passed to command.  This is what login(1)
+              does.  The -c option causes command to be executed with an empty
+              environment.  If -a is supplied, the shell passes  name  as  the
+              zeroth  argument  to the executed command.  If command cannot be
+              executed for some reason, a non-interactive shell exits,  unless
+              the  shell  option execfail is enabled, in which case it returns
+              failure.  An interactive shell returns failure iNAME
+       getgid, getegid - get group identity
+
+SYNOPSIS
+       #include <unistd.h>
+       #include <sys/types.h>
+
+       gid_t getgid(void);
+       gid_t getegid(void);
+
+DESCRIPTION
+       getgid() returns the real group ID of the current process.
+
+       getegid() returns the effective group ID of the current process.
+f the file  can-
+              not  be executed.  If command is not specified, any redirections
+              take effect in the current shell, and the return  status  is  0.
+              If there is a redirection error, the return statNAME
+       getgid, getegid - get group identity
+
+SYNOPSIS
+       #include <unistd.h>
+       #include <sys/types.h>
+
+       gid_t getgid(void);
+       gid_t getegid(void);
+
+DESCRIPTION
+       getgid() returns the real group ID of the current process.
+
+       getegid() returns the effective group ID of the current process.
+us is 1.
+/-------------------------------------------------------------------------------------/
+NAME
+       getpid, getppid - get process identification
+
+SYNOPSIS
+       #include <sys/types.h>
+       #include <unistd.h>
+
+       pid_t getpid(void);
+       pid_t getppid(void);
+
+DESCRIPTION
+       getpid() returns the process ID of the current process.  (This is often
+       used by routines that generate unique temporary filenames.)
+
+       getppid() returns the process ID of the parent of the current  process.
+/-------------------------------------------------------------------------------------/
+NAME
+       getuid, geteuid - get user identity
+
+SYNOPSIS
+       #include <unistd.h>
+       #include <sys/types.h>
+
+       uid_t getuid(void);
+       uid_t geteuid(void);
+
+DESCRIPTION
+       getuid() returns the real user ID of the current process.
+
+       geteuid() returns the effective user ID of the current process.
+/-------------------------------------------------------------------------------------/
+NAME
+       getgid, getegid - get group identity
+
+SYNOPSIS
+       #include <unistd.h>
+       #include <sys/types.h>
+
+       gid_t getgid(void);
+       gid_t getegid(void);
+
+DESCRIPTION
+       getgid() returns the real group ID of the current process.
+
+       getegid() returns the effective group ID of the current process.
+
+
+                         

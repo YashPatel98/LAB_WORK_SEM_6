@@ -1,0 +1,4 @@
+run: 
+	@cd /
+	@tree -a
+	run
